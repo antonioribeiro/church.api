@@ -1,10 +1,15 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
+    protected $tables = [
+        'users'
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -14,6 +19,16 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call('UserTableSeeder');
+        $this->dropAll();
+
+        $this->call('UsersSeeder');
+    }
+
+    private function dropAll()
+    {
+        foreach($this->tables as $table)
+        {
+            DB::table($table)->truncate();
+        }
     }
 }

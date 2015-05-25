@@ -11,10 +11,12 @@
 |
 */
 
-$factory->define('App\User', function ($faker) {
+$factory->define('App\Services\Users\Data\Entities\User', function ($faker) {
     return [
-        'name' => $faker->name,
+        'first_name' => $first = $faker->firstName,
+        'last_name' => $last = $faker->lastName,
         'email' => $faker->email,
+        'username' => strtolower($first).".".strtolower($last),
         'password' => str_random(10),
         'remember_token' => str_random(10),
     ];

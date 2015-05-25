@@ -144,6 +144,8 @@ return [
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
 
+        'PragmaRX\Sdk\ServiceProvider',
+
     ],
 
     /*

@@ -7,7 +7,7 @@ class UsersTest extends ApiTester
     /** @test */
     public function it_fetches_users()
     {
-        $this->makeRecords($this->entity);
+        $this->times(3)->makeRecords($this->entity);
 
         $this->getJson('api/v1/users');
 

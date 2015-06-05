@@ -1,5 +1,11 @@
 <?php
 
+$api = app('api.router');
+
+$api->version('v1', function ($api) {
+	$api->get('one', function() {});
+});
+
 Route::group(['prefix' => 'api/v1'],  function()
 {
     Route::group(['namespace' => 'Services\Users\Http\Controllers'], function()

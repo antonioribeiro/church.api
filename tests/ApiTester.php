@@ -99,4 +99,9 @@ class ApiTester extends TestCase {
 		return $records;
 	}
 
+	protected function getStub()
+	{
+		throw new BadMethodCallException('Create your own getStub method');
+	}
+
 }

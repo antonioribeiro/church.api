@@ -80,7 +80,7 @@ return [
 
     'key' => env('APP_KEY', 'SomeRandomString'),
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => MCRYPT_RIJNDAEL_256,
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +144,16 @@ return [
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
 
+
+        /*
+         * Third Parties Providers...
+         */
+//        'Dingo\Api\Provider\ApiServiceProvider',
+        'Dingo\Api\Provider\LaravelServiceProvider',
+
+        /*
+         * My Own Providers...
+         */
         'PragmaRX\Sdk\ServiceProvider',
 
     ],
@@ -194,6 +204,7 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
+        'API'       => 'Dingo\Api\Facade\API',
     ],
 
 ];

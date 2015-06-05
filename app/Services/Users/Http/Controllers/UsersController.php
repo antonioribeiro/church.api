@@ -18,8 +18,12 @@ class UsersController extends ApiController
 	{
 		$this->transformer = $transformer;
 	}
-	
 
+	/**
+	 * Get all users.
+	 *
+	 * @return mixed
+	 */
 	public function index()
 	{
 		$users = User::all();
@@ -27,6 +31,12 @@ class UsersController extends ApiController
 		return $this->respondWithSuccess($this->transformer->transformCollection($users));
 	}
 
+	/**
+	 * Show one user.
+	 *
+	 * @param $id
+	 * @return mixed
+	 */
 	public function show($id)
 	{
 		if ( ! $user = User::find($id))
